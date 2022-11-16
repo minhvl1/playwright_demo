@@ -36,7 +36,7 @@ const config: PlaywrightTestConfig = {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
     screenshot:"only-on-failure",
-    video:"retain-on-failure",
+    video:"on",
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://localhost:3000',
 
@@ -63,11 +63,21 @@ const config: PlaywrightTestConfig = {
     },
 
     {
-      name: 'webkit',
+      name: 'edge',
       use: {
-        ...devices['Desktop Safari'],
+        ...devices['Desktop Edge'],
       },
     },
+
+
+    // {
+    //   name: 'webkit',
+    //   use: {
+    //     ...devices['Desktop Safari'],
+    //   },
+    // },
+
+
 
     /* Test against mobile viewports. */
     // {
