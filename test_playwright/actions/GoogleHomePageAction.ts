@@ -38,7 +38,7 @@ export class GoogleHomePageAction {
         await commons.pressEnterToElement(this.getSearchInput)
     }
 
-    async expectURLcontain(){
+    async expectUrlContain(){
         expect(this.page.url()).toContain(this.getExpectURL)
 
     }
