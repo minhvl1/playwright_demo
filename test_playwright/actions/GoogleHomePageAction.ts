@@ -1,23 +1,20 @@
 import {Locator, Page } from '@playwright/test';
-import {GoogleHomePage} from "../page_objects/GoogleHomePage";
+import GoogleHomePage from "../page_objects/GoogleHomePage";
+
+
+let googleHomePage:GoogleHomePage
 
 
 export class GoogleHomePageAction {
-
-
-
-    readonly page: Page;
-    readonly getGoogleLink: string;
+    private page: Page;
+    readonly getGoogleLink;
     readonly getSearchInput: Locator;
-
-
-    googleHomePage = new GoogleHomePage()
 
 
     constructor(page: Page) {
         this.page = page;
-        this.getGoogleLink = this.googleHomePage.getGoogleURL()
-        this.getSearchInput= page.locator(this.googleHomePage.getSearchInput())
+        this.getGoogleLink= googleHomePage.getGoogleURL("https://www.google.com/")
+        this.getSearchInput= page.locator(googleHomePage.getSearchInput())
 
     }
 
