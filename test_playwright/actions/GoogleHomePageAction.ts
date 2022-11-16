@@ -1,38 +1,46 @@
-import {Locator, Page } from '@playwright/test';
-import GoogleHomePage from "../page_objects/GoogleHomePage";
+import {expect, Locator, Page} from '@playwright/test';
+import {GoogleHomePage} from "../page_objects/GoogleHomePage";
+import {Commons} from "../page_objects/Commons";
 
-
-let googleHomePage:GoogleHomePage
+let commons: Commons
 
 
 export class GoogleHomePageAction {
     private page: Page;
-    readonly getGoogleLink;
-    readonly getSearchInput: Locator;
+    readonly getGoogleLink: string;
+    readonly getSearchInput: string;
+    readonly getExpectURL: string;
 
+    googleHomePage = new GoogleHomePage()
 
     constructor(page: Page) {
         this.page = page;
-        this.getGoogleLink= googleHomePage.getGoogleURL("https://www.google.com/")
-        this.getSearchInput= page.locator(googleHomePage.getSearchInput())
 
+        this.getGoogleLink= this.googleHomePage.getGoogleURL
+        this.getSearchInput= this.googleHomePage.getSearchInput
+        this.getExpectURL=this.googleHomePage.expectURL
+        commons = new Commons(this.page)
     }
 
     async goToGoogle() {
-        await this.page.goto(this.getGoogleLink)
+        await commons.goToLink(this.getGoogleLink)
     }
 
-    async inputToSearch(value){
-        await this.getSearchInput.fill(value)
+    async inputToGoogleSearchTextbox(value){
+        await commons.fillToElement(this.getSearchInput,value)
     }
 
-    async clickToSearch(){
-        await this.getSearchInput.click()
+    async clickToGoogleSearchTextbox(){
+        await commons.clickToElement(this.getSearchInput)
     }
 
-    async pressEnter(){
-        await this.getSearchInput.press('Enter')
+    async pressEnterGoogleSearchTextbox(){
+        await commons.pressEnterToElement(this.getSearchInput)
     }
 
+    async expectURLcontain(){
+        expect(this.page.url()).toContain(this.getExpectURL)
+
+    }
 
 }

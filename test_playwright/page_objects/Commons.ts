@@ -1,6 +1,6 @@
 import { expect, Locator, Page } from '@playwright/test';
 
-export default class Commons {
+export class Commons {
 
     private page: Page;
 
@@ -15,8 +15,8 @@ export default class Commons {
        return await this.page.goto(URL)
     }
 
-    public async clickToElement(element){
-        await this.page.locator(element).click()
+    async clickToElement(element){
+       await this.page.locator(element).click()
     }
 
     async fillToElement(element,value){
@@ -24,9 +24,12 @@ export default class Commons {
     }
 
     async pressToElement(element,key){
-        await this.page.locator(element).press(key)
+         await this.page.locator(element).press(key)
     }
 
+    async pressEnterToElement(element){
+        await this.page.locator(element).press("Enter")
+    }
 
 }
 

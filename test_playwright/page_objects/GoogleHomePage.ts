@@ -1,16 +1,14 @@
-import {Page} from "@playwright/test";
+export class GoogleHomePage{
 
-
-export default class GoogleHomePage{
-    private page: Page;
-    constructor(page: Page) {
-        this.page = page
-    }
-    public async getGoogleURL(URL) {
-        return await this.page.goto(URL)
+    get getGoogleURL() {
+        return "https://www.google.com"
     }
 
-    public get getSearchInput(){
-        return this.page.locator("//input[@name='q']");
+    get getSearchInput(){
+        return "//input[@name='q']"
+    }
+
+    get expectURL(){
+       return "https://www.google.com/search?q=minh&s"
     }
 }
