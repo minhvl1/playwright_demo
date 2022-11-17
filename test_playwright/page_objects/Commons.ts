@@ -10,11 +10,6 @@ export class Commons {
 
     }
 
-
-    public async goToLink(URL) {
-       return await this.page.goto(URL)
-    }
-
     async clickToElement(element){
        await this.page.locator(element).click()
     }

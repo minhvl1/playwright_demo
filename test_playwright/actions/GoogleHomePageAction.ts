@@ -7,7 +7,6 @@ let commons: Commons
 
 export class GoogleHomePageAction {
     private page: Page;
-    readonly getGoogleLink: string;
     readonly getSearchInput: string;
     readonly getExpectURL: string;
 
@@ -15,16 +14,11 @@ export class GoogleHomePageAction {
 
     constructor(page: Page) {
         this.page = page;
-
-        this.getGoogleLink= this.googleHomePage.getGoogleURL
         this.getSearchInput= this.googleHomePage.getSearchInput
         this.getExpectURL=this.googleHomePage.expectURL
         commons = new Commons(this.page)
     }
 
-    async goToGoogle() {
-        await commons.goToLink(this.getGoogleLink)
-    }
 
     async inputToGoogleSearchTextbox(value){
         await commons.fillToElement(this.getSearchInput,value)
@@ -40,7 +34,6 @@ export class GoogleHomePageAction {
 
     async expectUrlContain(){
         expect(this.page.url()).toContain(this.getExpectURL)
-
     }
 
 }
