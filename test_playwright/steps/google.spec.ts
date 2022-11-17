@@ -14,7 +14,7 @@ test.describe("TC_01", ()=>{
 
   })
 
-    test.only('Google1', async ({page}) => {
+    test('Google1', async ({page}) => {
       const googleHomePageAction = new GoogleHomePageAction(page);
       await googleHomePageAction.inputToGoogleSearchTextbox("minh")
       await googleHomePageAction.pressEnterGoogleSearchTextbox()
@@ -23,7 +23,7 @@ test.describe("TC_01", ()=>{
     })
 
 
-  test.only('Google2', async ({page}) => {
+  test('Google2', async ({page}) => {
     const googleHomePageAction = new GoogleHomePageAction(page);
     await googleHomePageAction.inputToGoogleSearchTextbox("automation test")
     await googleHomePageAction.pressEnterGoogleSearchTextbox()
