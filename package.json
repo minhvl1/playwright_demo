@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pw-allure": "npx playwright test --reporter=line,allure-playwright"
+    "clean:reports": "rmdir /s/q allure-results",
+    "pw-allure": "npm run clean:reports && npx playwright test --reporter=line,allure-playwright"
   },
   "keywords": [],
   "author": "",
