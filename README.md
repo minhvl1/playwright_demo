@@ -22,11 +22,13 @@
 
 `npx playwright test --debug`
 
-- Run with code mode
+- Run with codegen mode
 
 `npx playwright codegen "url" `
 
 ![image](https://user-images.githubusercontent.com/67543695/203465176-6b34e18f-4178-46e5-ad96-3501764d3611.png)
+
+![image](https://user-images.githubusercontent.com/67543695/203465008-bedfb82d-efe5-43d9-bb9c-2777ddaf4ddb.png)
 
 ![image](https://user-images.githubusercontent.com/67543695/203465193-f81c6aed-5729-43e4-a8b8-c78b206c0bc2.png)
 
@@ -35,9 +37,6 @@
 ![image](https://user-images.githubusercontent.com/67543695/203465312-dc14b1e0-e935-4483-8c06-dea7fef85b79.png)
 
 ![image](https://user-images.githubusercontent.com/67543695/203465340-8c5abf44-5422-474f-a5c3-e9db94882b6b.png)
-
-
-![image](https://user-images.githubusercontent.com/67543695/203465008-bedfb82d-efe5-43d9-bb9c-2777ddaf4ddb.png)
 
 
 - run with allure report: 
