@@ -43,6 +43,10 @@ const config: PlaywrightTestConfig = {
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on-first-retry',
 
+    baseURL: "https://fakerestapi.azurewebsites.net/api/v1",
+      extraHTTPHeaders: {
+        "Content-Type": "application/json",
+      },
   },
   
 
@@ -63,12 +67,12 @@ const config: PlaywrightTestConfig = {
     //   },
     // },
 
-    {
-      name: 'edge',
-      use: {
-        ...devices['Desktop Edge'],
-      },
-    },
+    // {
+    //   name: 'edge',
+    //   use: {
+    //     ...devices['Desktop Edge'],
+    //   },
+    // },
 
 
     // {
