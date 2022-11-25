@@ -1,6 +1,6 @@
 import {expect, Locator, Page} from '@playwright/test';
 import {GoogleHomePage} from "../page_objects/GoogleHomePage";
-import {Commons} from "../page_objects/Commons";
+import {Commons} from "./Commons";
 
 let commons: Commons
 
