@@ -14,9 +14,9 @@ jobs:
         with:
           node-version: "14.x"
 
-      - name: Set up Homebrew
-        id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@master
+#      - name: Set up Homebrew
+#        id: set-up-homebrew
+#        uses: Homebrew/actions/setup-homebrew@master
 
 #      - name: Install dependencies
 #        if: always()
