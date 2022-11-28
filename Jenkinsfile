@@ -1,8 +1,8 @@
 pipeline {
-  agent {
-    docker {
+  agent { 
+    docker { 
       image 'mcr.microsoft.com/playwright:v1.17.2-focal'
-    }
+    } 
   }
   stages {
     stage('install playwright') {
@@ -29,7 +29,7 @@ pipeline {
         success {
           archiveArtifacts(artifacts: 'homepage-*.png', followSymlinks: false)
           sh 'rm -rf *.png'
-         }
+        }
       }
     }
   }
