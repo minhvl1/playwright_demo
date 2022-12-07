@@ -6,7 +6,7 @@ test.beforeAll(async ()=>{
 })
 
 test.describe('shadow root',  () => {
-    test.only('selectorhub',async ({page})=>{
+    test('selectorhub',async ({page})=>{
         await page.goto("https://selectorshub.com/xpath-practice-page/")
 
         let username = "#userName #kils"
