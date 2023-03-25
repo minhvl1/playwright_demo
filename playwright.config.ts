@@ -35,7 +35,10 @@ const config: PlaywrightTestConfig = {
   use: {
     /* Maximum time each action such as `click()` can take. Defaults to 0 (no limit). */
     actionTimeout: 0,
-    screenshot:"only-on-failure",
+    screenshot: {
+      mode: 'only-on-failure',
+      fullPage: true,
+    },
     video:"on",
     /* Base URL to use in actions like `await page.goto('/')`. */
     // baseURL: 'http://localhost:3000',
@@ -123,4 +126,5 @@ const config: PlaywrightTestConfig = {
   // },
 };
 
-export default config;
+// export default config;
+
